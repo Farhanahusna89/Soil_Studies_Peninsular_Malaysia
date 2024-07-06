@@ -155,7 +155,7 @@ else:
 
         # Research elaboration with citations
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Research Findings']}
             </div>
             """, unsafe_allow_html=True)
@@ -166,7 +166,7 @@ else:
         # Add location information
         st.write(f"### Location Information for {location_filter}")
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Trivia']}
             </div>
             """, unsafe_allow_html=True)
@@ -218,7 +218,7 @@ else:
 
         # Display the description directly from the dataset
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Description']}
             </div>
             """, unsafe_allow_html=True)
@@ -232,7 +232,7 @@ else:
 
         # Display the disclaimer directly from the dataset
         st.markdown(f"""  
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>DISCLAIMER NOTE: 
+            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>DISCLAIMER NOTE: 
             {location_info['Disclaimer']}
             </div>
             """, unsafe_allow_html=True)
