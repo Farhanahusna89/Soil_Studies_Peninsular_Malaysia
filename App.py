@@ -176,7 +176,7 @@ else:
         st.image(location_info['Photo Location'], caption=location_filter)
 
         # Transform and display the filtered dataframe in a vertical format
-        st.write("## Filtered Dataset with USCS Classification")
+        st.write("## Dataset with USCS Classification for {location_filter}")
         st.markdown("<div style='margin-top: 1cm;'></div>", unsafe_allow_html=True)
         st.markdown(f"""
               <table class="dataframe table-no-border">
