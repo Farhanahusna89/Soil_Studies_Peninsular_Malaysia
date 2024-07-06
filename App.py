@@ -37,7 +37,7 @@ else:
     st.markdown("""
         <style>
         .main .block-container {
-            max-width: 80%;
+            max-width: 90%;
             padding: 1rem;
         }
         .sidebar .sidebar-content {
