@@ -37,7 +37,7 @@ else:
     st.markdown("""
         <style>
         .main .block-container {
-            max-width: 100%;
+            max-width: 80%;
             padding: 1rem;
         }
         .sidebar .sidebar-content {
@@ -56,7 +56,7 @@ else:
         .dataframe th, .dataframe td {
             text-align: left;
             padding: 10px;
-            font-size: 1em;
+            font-size: 1.25em;
             font-weight: bold;
         }
         .dataframe.table-no-border th, .dataframe.table-no-border td {
@@ -218,7 +218,7 @@ else:
 
         # Display the description directly from the dataset
         st.markdown(f"""
-            <div style='width: 90%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Description']}
             </div>
             """, unsafe_allow_html=True)
@@ -232,7 +232,7 @@ else:
 
         # Display the disclaimer directly from the dataset
         st.markdown(f"""  
-            <div style='width: 90%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>NOTE: 
+            <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>NOTE: 
             {location_info['Disclaimer']}
             </div>
             """, unsafe_allow_html=True)
