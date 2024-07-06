@@ -13,7 +13,7 @@ else:
     st.error("CSS file not found.")
 
 # Load your dataset
-data_url = 'https://github.com/zulianizulkoffli/Soil_Studies_Peninsular_Malaysia/raw/main/Data_For_Viz.csv'
+data_url = 'https://raw.githubusercontent.com/zulianizulkoffli/Soil_Studies_Peninsular_Malaysia/main/Data_For_Viz.csv'
 data = pd.read_csv(data_url, delimiter=',', encoding='utf-8')
 
 # Correcting the column names
