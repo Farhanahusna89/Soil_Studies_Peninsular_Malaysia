@@ -48,28 +48,28 @@ else:
             margin: 0 auto;
             padding: 1rem;
             border-radius: 5px;
-            background-color: white.
+            background-color: white;
         }
         .table-content {
-            width: 100%.
+            width: 100%;
         }
         .dataframe th, .dataframe td {
-            text-align: left.
-            padding: 10px.
-            font-size: 1.25em.
-            font-weight: bold.
+            text-align: left;
+            padding: 10px;
+            font-size: 1.25em;
+            font-weight: bold;
         }
         .dataframe.table-no-border th, .dataframe.table-no-border td {
-            border: none.
+            border: none;
         }
         .dataframe th {
-            width: 30%.
+            width: 30%;
         }
         .dataframe td {
-            width: 70%.
+            width: 70%;
         }
         .no-input-box {
-            display: none.
+            display: none;
         }
         .sidebar .sidebar-content .stMarkdown, .sidebar .sidebar-content .stSelectbox {
             font-size: 2em; /* 2 times bigger font size */
@@ -155,7 +155,7 @@ else:
 
         # Research elaboration with citations
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Research Findings']}
             </div>
             """, unsafe_allow_html=True)
@@ -166,7 +166,7 @@ else:
         # Add location information
         st.write(f"### Location Information for {location_filter}")
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Trivia']}
             </div>
             """, unsafe_allow_html=True)
@@ -176,7 +176,7 @@ else:
         st.image(location_info['Photo Location'], caption=location_filter)
 
         # Transform and display the filtered dataframe in a vertical format
-        st.write("## Soil Dataset with USCS Classification")
+        st.write("## Filtered Dataset with USCS Classification")
         st.markdown("<div style='margin-top: 1cm;'></div>", unsafe_allow_html=True)
         st.markdown(f"""
               <table class="dataframe table-no-border">
@@ -205,18 +205,20 @@ else:
             </table>
             """, unsafe_allow_html=True)
             
+            
+
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
 
         # Explanation and research findings
         st.write(f"### Soil Type for {location_filter} : {location_info['Soil Type']}")
 
-        # Add gap 
+        # Add gap between table and research findings
         st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
 
         # Display the description directly from the dataset
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Description']}
             </div>
             """, unsafe_allow_html=True)
@@ -224,76 +226,92 @@ else:
         # Add gaps
         st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
         
-        
-        # Add gap 
-        st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
+            
+  # Title of the app
+st.markdown(f"""  
+    <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>  
+    <b>Soil Texture Classification</b>
+    </div>
+    """, unsafe_allow_html=True)
 
-        # Display the disclaimer directly from the dataset
-        st.markdown(f"""  
-            <div style='width: 80%; font-size: 1.35em; text-align: justify; padding: 10px; border: none;'>DISCLAIMER NOTE: 
-            {location_info['Disclaimer']}
-            </div>
-            """, unsafe_allow_html=True)
+# Introduction
+st.markdown(f"""  
+    <div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>  
+    The USDA system classifies soil into 12 primary texture classes based on the percentages of sand, silt, and clay. These texture classes are a standard for understanding and communicating soil composition. Here are the different texture classes:
+    </div>
+    """, unsafe_allow_html=True)
+
+# Soil texture classes
+soil_classes = {
+    "<b>Sand</b>": "Contains 85-100% sand, and the percentage of silt plus 1.5 times the percentage of clay is not more than 15.<br>",
+    "<b>Loamy Sand</b>": "Contains 70-90% sand, and the percentage of silt plus twice the percentage of clay is 15-30.<br>",
+    "<b>Sandy Loam</b>": "Contains less than 30% clay, 50-70% sand, and the remainder is silt.<br>",
+    "<b>Loam</b>": "Contains 7-27% clay, less than 52% sand, and 28-50% silt.<br>",
+    "<b>Silt Loam</b>": "Contains 50-88% silt, 12-27% clay, and less than 20% sand.<br>",
+    "<b>Silt</b>": "Contains 80% or more silt and less than 12% clay.<br>",
+    "<b>Sandy Clay Loam</b>": "Contains 20-35% clay, less than 28% silt, and more than 45% sand.<br>",
+    "<b>Clay Loam</b>": "Contains 27-40% clay, 20-45% sand, and the remainder is silt.<br>",
+    "<b>Silty Clay Loam</b>": "Contains 27-40% clay and 40-73% silt.<br>",
+    "<b>Sandy Clay</b>": "Contains 35% or more clay and 45% or more sand.<br>",
+    "<b>Silty Clay</b>": "Contains 40% or more clay and 40% or more silt.<br>",
+    "<b>Clay</b>": "Contains 40% or more clay, less than 45% sand, and less than 40% silt.<br><br>"
+}
+
+# Displaying the soil classes
+for texture, description in soil_classes.items():
+    st.markdown(f"<div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>{texture}: {description}</div>", unsafe_allow_html=True)
 
 
-        # Title of the app
-        st.title("Soil Texture Classification")
-        
-        # Introduction
-        st.markdown("""
-        The USDA (United States Department of Agriculture) system classifies soil into 12 primary texture classes based on the percentages of sand, silt, and clay. These texture classes are a standard for understanding and communicating soil composition. Here are the different texture classes:
-        """)
-        
-        # Soil texture classes
-        soil_classes = {
-            "Sand": "Contains 85-100% sand, and the percentage of silt plus 1.5 times the percentage of clay is not more than 15.",
-            "Loamy Sand": "Contains 70-90% sand, and the percentage of silt plus twice the percentage of clay is 15-30.",
-            "Sandy Loam": "Contains less than 30% clay, 50-70% sand, and the remainder is silt.",
-            "Loam": "Contains 7-27% clay, less than 52% sand, and 28-50% silt.",
-            "Silt Loam": "Contains 50-88% silt, 12-27% clay, and less than 20% sand.",
-            "Silt": "Contains 80% or more silt and less than 12% clay.",
-            "Sandy Clay Loam": "Contains 20-35% clay, less than 28% silt, and more than 45% sand.",
-            "Clay Loam": "Contains 27-40% clay, 20-45% sand, and the remainder is silt.",
-            "Silty Clay Loam": "Contains 27-40% clay and 40-73% silt.",
-            "Sandy Clay": "Contains 35% or more clay and 45% or more sand.",
-            "Silty Clay": "Contains 40% or more clay and 40% or more silt.",
-            "Clay": "Contains 40% or more clay, less than 45% sand, and less than 40% silt."
-        }
-        
-        # Displaying the soil classes
-        for texture, description in soil_classes.items():
-            st.markdown(f"**{texture}:** {description}")
-        
-        # Soil Texture Triangle
-        st.markdown("""
-        ### Using the Soil Texture Triangle
-        - The Soil Texture Triangle is a tool used to classify the texture class of a soil based on its sand, silt, and clay percentages.
-        - The triangle is divided into various zones, each representing a different texture class.
-        - To classify a soil, plot the percentage of sand on the horizontal axis, the percentage of clay on the left vertical axis, and the percentage of silt on the right vertical axis. The intersection of these three lines indicates the soil's texture class.
-        """)
-        
-        # Implications of Soil Texture
-        st.markdown("""
-        ### Implications of Soil Texture
-        - **Water Holding Capacity:** Clay soils have high water-holding capacity, while sandy soils have low. This affects the soil’s ability to support plant growth.
-        - **Aeration and Drainage:** Sandy soils are well-aerated and well-drained, whereas clay soils may suffer from poor drainage and aeration, affecting root development.
-        - **Nutrient Availability:** Clay and silt soils are better at holding nutrients than sandy soils, influencing fertilizer management practices.
-        - **Workability:** Sandy soils are easier to cultivate than clay soils, which can be hard and cloddy when dry and sticky when wet.
-        - **Erosion Risk:** Sandy soils are more prone to erosion than clay or silt soils, impacting land management strategies.
-        """)
-        
-        # Embedding the image
-        st.markdown("""
-        ### Soil Texture Triangle Image
-        """)
-        st.image("https://raw.githubusercontent.com/zulianizulkoffli/Soil_Studies_Peninsular_Malaysia/main/Texture_Triangle_USDA.jpg", caption="USDA Soil Texture Triangle")
-        
-        # Footer
-        st.markdown("""
-        ---
-        This app provides a quick reference to the USDA soil texture classification system.
-        """)
-        
-        # Add gap between table and research findings
-        st.markdown("<div style='margin-top: 5cm;'></div>", unsafe_allow_html=True)
-        
+# Soil Texture Triangle
+st.markdown(f"""  
+<div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>  
+<b>Using the Soil Texture Triangle</b><br><br>
+- The Soil Texture Triangle is a tool used to classify the texture class of a soil based on its sand, silt, and clay percentages.<br><br>
+- The triangle is divided into various zones, each representing a different texture class.<br><br>
+- To classify a soil, plot the percentage of sand on the horizontal axis, the percentage of clay on the left vertical axis, and the percentage of silt on the right vertical axis. The intersection of these three lines indicates the soil's texture class.<br><br>
+</div>
+""", unsafe_allow_html=True)
+
+# Implications of Soil Texture
+st.markdown(f"""  
+<div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>  
+<b>Implications of Soil Texture</b><br><br>
+- <b>Water Holding Capacity:</b> Clay soils have high water-holding capacity, while sandy soils have low. This affects the soil’s ability to support plant growth.<br><br>
+- <b>Aeration and Drainage:</b> Sandy soils are well-aerated and well-drained, whereas clay soils may suffer from poor drainage and aeration, affecting root development.<br><br>
+- <b>Nutrient Availability:</b> Clay and silt soils are better at holding nutrients than sandy soils, influencing fertilizer management practices.<br><br>
+- <b>Workability:</b> Sandy soils are easier to cultivate than clay soils, which can be hard and cloddy when dry and sticky when wet.<br><br>
+- <b>Erosion Risk:</b> Sandy soils are more prone to erosion than clay or silt soils, impacting land management strategies.<br><br>
+</div>
+""", unsafe_allow_html=True)
+
+
+
+# Embedding the image and centering the text with slight adjustment to the left
+st.markdown(f"""  
+    <div style='width: 70%; text-align: center; padding: 10px; border: none;'>  
+    <h3>Soil Texture Triangle Image</h3>
+    <img src="https://raw.githubusercontent.com/zulianizulkoffli/Soil_Studies_Peninsular_Malaysia/main/Texture_Triangle_USDA.jpg" alt="USDA Soil Texture Triangle" style='max-width: 70%; height: auto;'>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Footer
+st.markdown(f"""  
+    <div style='width: 70%;text-align: center; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>  
+    ---
+    This image provides a quick reference to the USDA soil texture classification system.
+    </div>
+    """, unsafe_allow_html=True)
+
+
+# Add gap 
+st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
+
+# Display the disclaimer directly from the dataset
+st.markdown(f"""  
+<div style='width: 70%; font-size: 1.5em; text-align: justify; padding: 10px; border: none;'>NOTE: 
+{location_info['Disclaimer']}
+</div>
+""", unsafe_allow_html=True)
+
+# Add gap between table and research findings
+st.markdown("<div style='margin-top: 5cm;'></div>", unsafe_allow_html=True)
