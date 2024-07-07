@@ -155,7 +155,7 @@ else:
 
         # Research elaboration with citations
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Research Findings']}
             </div>
             """, unsafe_allow_html=True)
@@ -166,7 +166,7 @@ else:
         # Add location information
         st.write(f"### Location Information for {location_filter}")
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Trivia']}
             </div>
             """, unsafe_allow_html=True)
@@ -218,7 +218,7 @@ else:
 
         # Display the description directly from the dataset
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Description']}
             </div>
             """, unsafe_allow_html=True)
@@ -229,14 +229,14 @@ else:
             
   # Title of the app
 st.markdown(f"""  
-    <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>  
+    <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>  
     <b>Soil Texture Classification</b>
     </div>
     """, unsafe_allow_html=True)
 
 # Introduction
 st.markdown(f"""  
-    <div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>  
+    <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>  
     The USDA system classifies soil into 12 primary texture classes based on the percentages of sand, silt, and clay. These texture classes are a standard for understanding and communicating soil composition. Here are the different texture classes:
     </div>
     """, unsafe_allow_html=True)
@@ -259,12 +259,12 @@ soil_classes = {
 
 # Displaying the soil classes
 for texture, description in soil_classes.items():
-    st.markdown(f"<div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>{texture}: {description}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>{texture}: {description}</div>", unsafe_allow_html=True)
 
 
 # Soil Texture Triangle
 st.markdown(f"""  
-<div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>  
+<div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>  
 <b>Using the Soil Texture Triangle</b><br><br>
 - The Soil Texture Triangle is a tool used to classify the texture class of a soil based on its sand, silt, and clay percentages.<br><br>
 - The triangle is divided into various zones, each representing a different texture class.<br><br>
@@ -274,7 +274,7 @@ st.markdown(f"""
 
 # Implications of Soil Texture
 st.markdown(f"""  
-<div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>  
+<div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>  
 <b>Implications of Soil Texture</b><br><br>
 - <b>Water Holding Capacity:</b> Clay soils have high water-holding capacity, while sandy soils have low. This affects the soil’s ability to support plant growth.<br><br>
 - <b>Aeration and Drainage:</b> Sandy soils are well-aerated and well-drained, whereas clay soils may suffer from poor drainage and aeration, affecting root development.<br><br>
@@ -296,7 +296,7 @@ st.markdown(f"""
 
 # Footer
 st.markdown(f"""  
-    <div style='width: 80%;text-align: center; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>  
+    <div style='width: 80%;text-align: center; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>  
     ---
     This image provides a quick reference to the USDA soil texture classification system.
     </div>
@@ -308,7 +308,7 @@ st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
 
 # Display the disclaimer directly from the dataset
 st.markdown(f"""  
-<div style='width: 80%; font-size: 1.2em; text-align: justify; padding: 10px; border: none;'>DISCLAIMER NOTE: 
+<div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>DISCLAIMER NOTE: 
 {location_info['Disclaimer']}
 </div>
 """, unsafe_allow_html=True)
