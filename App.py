@@ -48,28 +48,28 @@ else:
             margin: 0 auto;
             padding: 1rem;
             border-radius: 5px;
-            background-color: white;
+            background-color: white.
         }
         .table-content {
-            width: 100%;
+            width: 100%.
         }
         .dataframe th, .dataframe td {
-            text-align: left;
-            padding: 10px;
-            font-size: 1.25em;
-            font-weight: bold;
+            text-align: left.
+            padding: 10px.
+            font-size: 1.25em.
+            font-weight: bold.
         }
         .dataframe.table-no-border th, .dataframe.table-no-border td {
-            border: none;
+            border: none.
         }
         .dataframe th {
-            width: 30%;
+            width: 30%.
         }
         .dataframe td {
-            width: 70%;
+            width: 70%.
         }
         .no-input-box {
-            display: none;
+            display: none.
         }
         .sidebar .sidebar-content .stMarkdown, .sidebar .sidebar-content .stSelectbox {
             font-size: 2em; /* 2 times bigger font size */
@@ -205,15 +205,13 @@ else:
             </table>
             """, unsafe_allow_html=True)
             
-            
-
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
 
         # Explanation and research findings
         st.write(f"### Soil Type for {location_filter} : {location_info['Soil Type']}")
 
-        # Add gap between table and research findings
+        # Add gap 
         st.markdown("<div style='margin-top: 0.5cm;'></div>", unsafe_allow_html=True)
 
         # Display the description directly from the dataset
@@ -296,19 +294,6 @@ else:
         This app provides a quick reference to the USDA soil texture classification system.
         """)
         
-        
-        
-        
-
-
-
-
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 5cm;'></div>", unsafe_allow_html=True)
-
-        # References (You can add your references here in APA style format)
-        # st.write("**References:**")
-        # st.markdown("- Pozdnyakova, L. (1999). Relationship between geo-electrical resistivity and soil properties. *Journal of Geotechnical and Geoenvironmental Engineering*, 125(4), 345-353.")
-        # st.markdown("- Samouelian, A., Cousin, I., Tabbagh, A., Bruand, A., & Richard, G. (2005). Electrical resistivity survey in soil science: a review. *Soil and Tillage Research*, 83(2), 173-193.")
-        # st.markdown("- Telford, W. M., Geldart, L. P., & Sheriff, R. E. (1990). *Applied Geophysics*. Cambridge University Press.")
-
+        
