@@ -237,6 +237,72 @@ else:
             </div>
             """, unsafe_allow_html=True)
 
+
+        # Title of the app
+        st.title("Soil Texture Classification")
+        
+        # Introduction
+        st.markdown("""
+        The USDA (United States Department of Agriculture) system classifies soil into 12 primary texture classes based on the percentages of sand, silt, and clay. These texture classes are a standard for understanding and communicating soil composition. Here are the different texture classes:
+        """)
+        
+        # Soil texture classes
+        soil_classes = {
+            "Sand": "Contains 85-100% sand, and the percentage of silt plus 1.5 times the percentage of clay is not more than 15.",
+            "Loamy Sand": "Contains 70-90% sand, and the percentage of silt plus twice the percentage of clay is 15-30.",
+            "Sandy Loam": "Contains less than 30% clay, 50-70% sand, and the remainder is silt.",
+            "Loam": "Contains 7-27% clay, less than 52% sand, and 28-50% silt.",
+            "Silt Loam": "Contains 50-88% silt, 12-27% clay, and less than 20% sand.",
+            "Silt": "Contains 80% or more silt and less than 12% clay.",
+            "Sandy Clay Loam": "Contains 20-35% clay, less than 28% silt, and more than 45% sand.",
+            "Clay Loam": "Contains 27-40% clay, 20-45% sand, and the remainder is silt.",
+            "Silty Clay Loam": "Contains 27-40% clay and 40-73% silt.",
+            "Sandy Clay": "Contains 35% or more clay and 45% or more sand.",
+            "Silty Clay": "Contains 40% or more clay and 40% or more silt.",
+            "Clay": "Contains 40% or more clay, less than 45% sand, and less than 40% silt."
+        }
+        
+        # Displaying the soil classes
+        for texture, description in soil_classes.items():
+            st.markdown(f"**{texture}:** {description}")
+        
+        # Soil Texture Triangle
+        st.markdown("""
+        ### Using the Soil Texture Triangle
+        - The Soil Texture Triangle is a tool used to classify the texture class of a soil based on its sand, silt, and clay percentages.
+        - The triangle is divided into various zones, each representing a different texture class.
+        - To classify a soil, plot the percentage of sand on the horizontal axis, the percentage of clay on the left vertical axis, and the percentage of silt on the right vertical axis. The intersection of these three lines indicates the soil's texture class.
+        """)
+        
+        # Implications of Soil Texture
+        st.markdown("""
+        ### Implications of Soil Texture
+        - **Water Holding Capacity:** Clay soils have high water-holding capacity, while sandy soils have low. This affects the soil’s ability to support plant growth.
+        - **Aeration and Drainage:** Sandy soils are well-aerated and well-drained, whereas clay soils may suffer from poor drainage and aeration, affecting root development.
+        - **Nutrient Availability:** Clay and silt soils are better at holding nutrients than sandy soils, influencing fertilizer management practices.
+        - **Workability:** Sandy soils are easier to cultivate than clay soils, which can be hard and cloddy when dry and sticky when wet.
+        - **Erosion Risk:** Sandy soils are more prone to erosion than clay or silt soils, impacting land management strategies.
+        """)
+        
+        # Embedding the image
+        st.markdown("""
+        ### Soil Texture Triangle Image
+        """)
+        st.image("https://raw.githubusercontent.com/zulianizulkoffli/Soil_Studies_Peninsular_Malaysia/main/Texture_Triangle_USDA.jpg", caption="USDA Soil Texture Triangle")
+        
+        # Footer
+        st.markdown("""
+        ---
+        This app provides a quick reference to the USDA soil texture classification system.
+        """)
+        
+        
+        
+        
+
+
+
+
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 5cm;'></div>", unsafe_allow_html=True)
 
