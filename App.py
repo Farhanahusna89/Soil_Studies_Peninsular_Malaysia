@@ -155,7 +155,7 @@ else:
 
         # Research elaboration with citations
         st.markdown(f"""
-            <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>
+            <div style='width: 80%; font-size: 1.25em; text-align: justify; padding: 10px; border: none;'>
             {location_info['Research Findings']}
             </div>
             """, unsafe_allow_html=True)
