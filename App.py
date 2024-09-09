@@ -118,14 +118,12 @@ else:
         folium_static(m)
         st.markdown("</div>", unsafe_allow_html=True)
 
-        # Add clickable link to the extension web app
-        st.markdown("""
-            <div style='text-align: center; margin-top: 20px;'>
-                <a href='https://soil-studies-peninsular-malaysia-extension1.streamlit.app/' target='_blank'>
-                    Go to the Extension Web App
-                </a>
-            </div>
-        """, unsafe_allow_html=True)
+       # Add a button in the sidebar
+        st.sidebar.markdown("### Additional Resources")
+        if st.sidebar.button("Open Extension Web App"):
+        js = "window.open('https://soil-studies-peninsular-malaysia-extension1.streamlit.app/')"  # JavaScript code to open the link
+        html = f'<script>{js}</script>'
+        st.components.v1.html(html, height=0, width=0)
 
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
