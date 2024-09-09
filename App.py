@@ -20,9 +20,7 @@ data = pd.read_csv(data_url, delimiter=',', encoding='utf-8')
 data.columns = data.columns.str.strip()
 
 # Extract necessary columns for the final output
-required_columns = ['Location', 'Latitude', 'Longitude', 'Depth (m)', 'Clay (%)', 'Silt (%)', 'Sand (%)', 'Gravels (%)', 
-                    'D10', 'D30', 'D60', 'CU', 'CC', '1D inverted resistivity', 'Moisture content (%)', 'pH', 
-                    'Soil Type', 'Fine Soil (%)', 'Sand (%)', 'USCS Group Symbol', 'Description', 'Photo Location']
+required_columns = ['Location', 'Latitude', 'Longitude', 'Depth (m)', 'Clay (%)', 'Silt (%)', 'Sand (%)', 'Gravels (%)', 'D10', 'D30', 'D60', 'CU', 'CC', '1D inverted resistivity', 'Moisture content (%)', 'pH', 'Soil Type', 'Fine Soil (%)', 'Sand (%)', 'USCS Group Symbol', 'Description', 'Photo Location']
 
 # Check if the required columns exist in the dataset
 missing_columns = [col for col in required_columns if col not in data.columns]
@@ -45,6 +43,37 @@ else:
         .sidebar .sidebar-content {
             background-color: #D0EFFF;
         }
+        .table-container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .table-content {
+            width: 100%;
+        }
+        .dataframe th, .dataframe td {
+            text-align: left;
+            padding: 10px;
+            font-size: 1.25em;
+            font-weight: bold;
+        }
+        .dataframe.table-no-border th, .dataframe.table-no-border td {
+            border: none;
+        }
+        .dataframe th {
+            width: 30%;
+        }
+        .dataframe td {
+            width: 70%;
+        }
+        .no-input-box {
+            display: none;
+        }
+        .sidebar .sidebar-content .stMarkdown, .sidebar .sidebar-content .stSelectbox {
+            font-size: 2em; /* 2 times bigger font size */
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -56,9 +85,9 @@ else:
 
     # Add a large "Filter Options" title
     st.sidebar.markdown("<div class='filter-options'></div>", unsafe_allow_html=True)
-    st.sidebar.markdown("""
-        <div style='width: 100%; font-size: 2.5em; text-align: justify; padding: 10px;'>
-        FILTER OPTIONS
+    st.sidebar.markdown(f"""
+        <div style='width: 100%; font-size: 2.5em; text-align: justify; padding: 10px; border: bold: none;'>
+        {'FILTER OPTIONS'}
         </div>
         """, unsafe_allow_html=True)
 
@@ -118,29 +147,35 @@ else:
         folium_static(m)
         st.markdown("</div>", unsafe_allow_html=True)
 
-       # Add a button in the sidebar
-        st.sidebar.markdown("### Additional Resources")
-        if st.sidebar.button("Open Extension Web App"):
-        js = "window.open('https://soil-studies-peninsular-malaysia-extension1.streamlit.app/')"  # JavaScript code to open the link
-        html = f'<script>{js}</script>'
-        st.components.v1.html(html, height=0, width=0)
+        # Add gap between table and research findings
+        st.markdown("<div style='margin-top: 1cm;'></div>", unsafe_allow_html=True)
+
+        # Research introduction elaboration
+        st.write("### Preface:")
+
+        # Research elaboration with citations
+        st.markdown(f"""
+            <div style='width: 80%; font-size: 1.25em; text-align: justify; padding: 10px; border: none;'>
+            {location_info['Research Findings']}
+            </div>
+            """, unsafe_allow_html=True)
 
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
 
-        # Explanation and research findings
-        st.write(f"### Soil Type for {location_filter}: {location_info['Soil Type']}")
+        # Add location information
+        st.write(f"### Location Information for {location_filter}")
         st.markdown(f"""
             <div style='width: 80%; font-size: 1.23em; text-align: justify; padding: 10px; border: none;'>
-            {location_info['Description']}
+            {location_info['Trivia']}
             </div>
             """, unsafe_allow_html=True)
 
         # Add location image
-        if 'Photo Location' in location_info and pd.notna(location_info['Photo Location']):
-            st.image(location_info['Photo Location'], caption=location_filter)
+        st.markdown("<div style='margin-top: 1.5cm;'>", unsafe_allow_html=True)
+        st.image(location_info['Photo Location'], caption=location_filter)
 
-        # Display the filtered dataset in a vertical format
+        # Transform and display the filtered dataframe in a vertical format
         st.write("## Filtered Dataset with USCS Classification")
         st.markdown("<div style='margin-top: 1cm;'></div>", unsafe_allow_html=True)
         st.markdown(f"""
@@ -169,16 +204,17 @@ else:
             </tbody>
             </table>
             """, unsafe_allow_html=True)
-                        
+            
+            
 
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
         
-        # Add a clickable link in the main content or sidebar
+        # Add clickable link to the extension web app
         st.markdown("""
             <div style='text-align: center; margin-top: 20px;'>
                 <a href='https://soil-studies-peninsular-malaysia-extension1.streamlit.app/' target='_blank'>
-                    Go to the Extension Web App
+                    Go to the Extension Web App for further Soil Informations
                 </a>
             </div>
         """, unsafe_allow_html=True)
