@@ -209,6 +209,18 @@ else:
 
         # Add gap between table and research findings
         st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
+        
+        # Add a clickable link in the main content or sidebar
+        st.markdown("""
+            <div style='text-align: center; margin-top: 20px;'>
+                <a href='https://soil-studies-peninsular-malaysia-extension1.streamlit.app/' target='_blank'>
+                    Go to the Extension Web App
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
+
+         # Add gap between table and research findings
+        st.markdown("<div style='margin-top: 2cm;'></div>", unsafe_allow_html=True)
 
         # Explanation and research findings
         st.write(f"### Soil Type for {location_filter} : {location_info['Soil Type']}")
